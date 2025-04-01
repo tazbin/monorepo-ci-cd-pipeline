@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'backend/**'
+    # paths:
+    #   - 'backend/**'
 
 jobs:
   check-code-quality:
@@ -41,6 +41,7 @@ jobs:
         working-directory: backend
         run: |
           docker compose build prod
+          docker ps
           docker tag monorepo-ci-cd-pipeline-prod mdtazbinur/example-app:${{ github.sha }}
           docker push mdtazbinur/example-app:${{ github.sha }}
 
