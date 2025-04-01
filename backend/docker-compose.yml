@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  dev:
+    container_name: mono-pipeine-api-dev
+    build:
+      context: .
+      target: development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - '3000:3000'
+    restart: unless-stopped
+    networks:
+      - mono-pipeine-api-network
+
+  prod:
+    container_name: mono-pipeine-api-prod
+    build:
+      context: .
+      target: production
+    ports:
+      - '3000:3000'
+    restart: unless-stopped
+    networks:
+      - mono-pipeine-api-network
+
+networks:
+  mono-pipeine-api-network:
+    driver: bridge
