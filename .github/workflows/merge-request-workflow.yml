@@ -43,7 +43,7 @@ jobs:
           pwd
           ls -al
           docker compose build prod
-          docker ps
+          docker image ls
           docker tag monorepo-ci-cd-pipeline-prod mdtazbinur/example-app:${{ github.sha }}
           docker push mdtazbinur/example-app:${{ github.sha }}
 
