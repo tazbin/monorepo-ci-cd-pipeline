@@ -40,11 +40,8 @@ jobs:
       - name: Build and push image
         working-directory: backend
         run: |
-          pwd
-          ls -al
           docker compose build prod
-          docker image ls
-          docker tag monorepo-ci-cd-pipeline-prod mdtazbinur/example-app:${{ github.sha }}
+          docker tag backend-prod mdtazbinur/example-app:${{ github.sha }}
           docker push mdtazbinur/example-app:${{ github.sha }}
 
   deploy-prod-image:
