@@ -4,12 +4,11 @@ on:
   push:
     branches:
       - master
-    # paths:
-    #   - 'frontend/**'
-  workflow_dispatch:
+    paths:
+      - 'frontend/**'
 
 jobs:
-  deploy:
+  deploy-frontend:
     runs-on: ubuntu-latest
 
     steps:
