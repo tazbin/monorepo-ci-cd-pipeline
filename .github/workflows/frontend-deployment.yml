@@ -22,7 +22,7 @@ jobs:
       - name: Install Dependencies
         run: |
           cd frontend
-          npm ci
+          npm install
 
       - name: Upload Node Modules
         uses: actions/upload-artifact@v4
@@ -45,10 +45,17 @@ jobs:
           name: node_modules
           path: frontend/node_modules
 
+      - name: Check if node_modules are downloaded correctly
+        run: |
+          cd frontend
+          echo "Checking node_modules contents..."
+          ls -al frontend/node_modules
+          echo "Checking if eslint is installed..."
+          npx eslint --version
+
       - name: Run Lint Check
         run: |
           cd frontend
-          ls -al
           npm run lint:check
 
   format-check:
@@ -66,10 +73,17 @@ jobs:
           name: node_modules
           path: frontend/node_modules
 
+      - name: Check if node_modules are downloaded correctly
+        run: |
+          cd frontend
+          echo "Checking node_modules contents..."
+          ls -al frontend/node_modules
+          echo "Checking if prettier is installed..."
+          npx prettier --version
+
       - name: Run Format Check
         run: |
           cd frontend
-          ls -al
           npm run format:check
 
   build:
