@@ -41,7 +41,7 @@ Before deploying the frontend or backend, you must first provision your AWS EC2 
    
    ```bash
    cd ansible
-   ansible-playbook -i inventory.ini setup-ec2.yml
+   ansible-playbook playbooks/install_docker.yml -v
    ```
 
 This will:
@@ -71,8 +71,8 @@ The Backend CI/CD workflow automates the deployment of the Dockerized Node.js RE
 1. Code Quality Checks:
 
    - Runs lint checks
-   - format checks
-   - tests for the backend code
+   - Runs format checks
+   - Runs tests for the backend code
 
 2. Docker Image Build & Push:
 
