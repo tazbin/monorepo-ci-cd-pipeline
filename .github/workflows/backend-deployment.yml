@@ -59,7 +59,6 @@ jobs:
 
             docker ps -f name=example-app-api -q | xargs -r docker stop
             docker ps -a -f name=example-app-api -q | xargs -r docker rm
-
             docker images 'mdtazbinur/example-app' -q | xargs -r docker rmi
 
             docker run -d --name example-app-api -p 80:3000 mdtazbinur/example-app:${{ needs.build-push-prod-image.outputs.sha_short }}
