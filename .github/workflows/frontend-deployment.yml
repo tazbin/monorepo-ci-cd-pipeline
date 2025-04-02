@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'frontend/**'
 
 jobs:
   lint-check:
@@ -51,7 +53,7 @@ jobs:
           npm run format:check
 
   build:
-    name: Build Vue.js App
+    name: Build App
     runs-on: ubuntu-latest
     needs: [lint-check, format-check]
 
