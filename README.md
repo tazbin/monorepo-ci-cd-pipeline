@@ -17,14 +17,14 @@ This repository contains a monorepo structure that includes both the frontend an
 ## 1. Project Structure
 
 ```
-├── ansible/                  # Ansible playbooks for provisioning EC2 and Docker setup
-├── frontend/                 # Vue.js frontend app
-├── backend/                  # Node.js REST API backend (Dockerized)
-├── .github/                  # GitHub Actions workflows for CI/CD
-│   ├── workflows/            # Folder containing frontend and backend deployment workflows
-│   │   ├── frontend-deployment.yml      # Frontend deployment workflow
-│   │   └── backend-deployment.yml       # Backend deployment workflow
-└── README.md                 # This README file
+├── ansible/                           # Ansible playbooks for provisioning EC2
+├── frontend/                          # Vue.js frontend app
+├── backend/                           # Node.js REST API backend (Dockerized)
+├── .github/                           # GitHub Actions workflows for CI/CD
+│   ├── workflows/                     # Folder containing frontend and backend deployment workflows
+│   │   ├── frontend-deployment.yml    # Frontend deployment workflow
+│   │   └── backend-deployment.yml     # Backend deployment workflow
+└── README.md                          # This README file
 ```
 
 ## 2. Infrastructure Setup with Ansible
