@@ -36,7 +36,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
-          account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          project-name: "monorepo-ci-cd"
-          api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: "monorepo-ci-cd"
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           directory: frontend/dist
