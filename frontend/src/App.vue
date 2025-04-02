@@ -2,7 +2,7 @@
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    This is a sample frontend app from vuejs...
+    This is a sample frontend application
   </header>
 </template>
 
