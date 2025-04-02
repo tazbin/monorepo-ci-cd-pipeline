@@ -34,6 +34,7 @@ jobs:
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: |
           cd frontend
+          ls -al
           npm install
 
       - name: Upload Node Modules
