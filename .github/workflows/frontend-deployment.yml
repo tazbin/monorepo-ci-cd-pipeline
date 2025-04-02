@@ -27,6 +27,16 @@ jobs:
           cd frontend
           npm install
 
+      - name: Check Linting
+        run: |
+          cd frontend
+          npm run lint:check
+
+      - name: Check Formatting
+        run: |
+          cd frontend
+          npm run format:check
+
       - name: Build Vue.js App
         run: |
           cd frontend
