@@ -34,7 +34,7 @@ Before deploying the frontend or backend, you must first provision your AWS EC2 
 ### Steps to Provision Your EC2 Instance:
 
 1. **Configure Ansible**:
-   - Modify the `inventory.ini` file to include your EC2 instance details, such as the hostname, user, and private key.
+   - Modify the `hosts.ini` file to include your EC2 instance details, such as the hostname, user, and private key.
 
 2. **Run the Ansible Playbook**:
    - Navigate to the `ansible/` directory and execute the following command to install Docker on your EC2 instance:
@@ -44,11 +44,7 @@ Before deploying the frontend or backend, you must first provision your AWS EC2 
    ansible-playbook playbooks/install_docker.yml -v
    ```
 
-This will:
-- Provision the EC2 instance.
-- Install Docker and configure it to run the backend Docker container.
-- 
-Once the EC2 instance is set up with Docker, you can proceed to deploy the frontend or backend.
+This will install Docker and configure it to run the backend Docker container. Once the EC2 instance is set up with Docker, you can proceed to deploy the frontend or backend.
 
 ## 3. Deployment & CI/CD Workflows
 
